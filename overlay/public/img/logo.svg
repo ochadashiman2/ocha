@@ -1,0 +1,11 @@
+<svg xmlns='http://www.w3.org/2000/svg'>
+    <symbol viewBox="0 0 50 50" id="logo">
+        <path
+            d='m2.6 25h10.9l6.5-15 10 30 6.5-15h10.9'
+            fill='none'
+            stroke='#ffffff'
+            stroke-linecap='round'
+            stroke-width='5'
+        />
+    </symbol>
+</svg>

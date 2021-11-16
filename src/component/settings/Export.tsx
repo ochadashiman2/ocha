@@ -7,6 +7,5 @@ export const ExportSettings: React.VFC<{}> = () => {
         value={JSON.stringify(value)}
         className="export_settings"
         readOnly={true}
-        maxLength={2000}
     />
 };

@@ -1,6 +1,7 @@
 import { JOB_TYPE } from '../lib/Constants';
 import { RgbaColor } from 'react-colorful';
 import { ToggleSelector, PtdpsFormat } from '../component/settings/FormatSettings';
+import settings from '../locales/en/settings';
 
 /** STATE */
 export type AppState = {
@@ -157,6 +158,17 @@ export type SettingsContextType = [
     value: Settings,
     setValue: React.Dispatch<React.SetStateAction<Settings>>
 ];
+
+/** LANG */
+export type LangType = 'English' | 'Japanese'
+
+export type LangResource = {
+    settings: typeof settings,
+};
+
+export type LangResources = {
+    [P in LangType]: LangResource
+};
 
 /** COLOR */
 type RgbaString = string;

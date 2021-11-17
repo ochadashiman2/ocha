@@ -1,5 +1,5 @@
-import { LANG_TYPE, JOB_TYPE } from '../lib/Constants';
-import { RgbaColor } from "react-colorful";
+import { JOB_TYPE } from '../lib/Constants';
+import { RgbaColor } from 'react-colorful';
 import { ToggleSelector, PtdpsFormat } from '../component/settings/FormatSettings';
 
 /** STATE */
@@ -157,19 +157,6 @@ export type SettingsContextType = [
     value: Settings,
     setValue: React.Dispatch<React.SetStateAction<Settings>>
 ];
-
-/** LANG */
-export type Langtype = (typeof LANG_TYPE)[number]['language'];
-
-export type MessageStore = {
-    [x: string]: {
-        [p in Langtype]: string
-    }
-};
-
-export type Message = {
-    setting: MessageStore
-};
 
 /** COLOR */
 type RgbaString = string;

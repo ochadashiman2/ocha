@@ -83,15 +83,6 @@ export const SETTING_APP_STATE: AppState = {
     ]
 };
 
-export const LANG_TYPE = [
-    // {language: 'English', languageId: '1'},
-    // {language: 'French', languageId: '2'},
-    // {language: 'German', languageId: '3'},
-    { language: 'Japanese', languageId: '4' },
-    // {language: 'Chinese', languageId: '5'},
-    // {language: 'Korean', languageId: '6'},
-] as const;
-
 export const LOCAL_STORAGE_KEY = 'pulse-overlay.settings';
 export const LOCAL_WINDOWFEATURES_KEY = 'pulse-overlay.windowPosition';
 

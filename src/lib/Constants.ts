@@ -85,6 +85,7 @@ export const SETTING_APP_STATE: AppState = {
 
 export const LOCAL_STORAGE_KEY = 'pulse-overlay.settings';
 export const LOCAL_WINDOWFEATURES_KEY = 'pulse-overlay.windowPosition';
+export const LOCAL_LANGUAGE_KEY = 'pulse-overlay.language';
 
 export const DEFAULT_SETTINGS: Settings = {
     hideOthersName: false,

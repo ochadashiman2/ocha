@@ -3,6 +3,7 @@ import { render } from 'react-dom';
 import { SettingsContextType } from '../../@types';
 import { DEFAULT_SETTINGS } from '../../lib/Constants';
 import { loadSettings } from '../../lib/Storage';
+import '../../locales/i18n';
 import { App } from './App';
 
 export const SettingsContext = createContext<SettingsContextType>([DEFAULT_SETTINGS, (_) => { }]);

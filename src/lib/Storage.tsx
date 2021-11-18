@@ -1,6 +1,7 @@
+import i18n from 'i18next';
 import { Settings } from '../@types/index';
 import { isPartialSettings } from '../typeguard';
-import { DEFAULT_SETTINGS, DEFAULT_WINDOWPOSITION, LOCAL_STORAGE_KEY, LOCAL_WINDOWFEATURES_KEY } from './Constants';
+import { DEFAULT_SETTINGS, DEFAULT_WINDOWPOSITION, LOCAL_LANGUAGE_KEY, LOCAL_STORAGE_KEY, LOCAL_WINDOWFEATURES_KEY } from './Constants';
 
 export const loadSettings = (): Settings => {
     const settings = localStorage.getItem(LOCAL_STORAGE_KEY);
@@ -33,4 +34,15 @@ export const saveWindowPosition = (): void => {
     }
     const features = `left=${pos.left},top=${pos.top},width=${pos.width},height=${pos.height}`;
     localStorage.setItem(LOCAL_WINDOWFEATURES_KEY, features);
+}
+
+export const loadLanguage = (): string => {
+    const language = localStorage.getItem(LOCAL_LANGUAGE_KEY);
+    if (language === null)
+        return i18n.language;
+    return language;
+}
+
+export const saveLanguage = (language: string): void => {
+    localStorage.setItem(LOCAL_LANGUAGE_KEY, language);
 }

@@ -1,15 +1,19 @@
 import { LogoContainer } from "../Logo";
+import { useTranslation } from 'react-i18next';
 
 export const InitialMessage: React.VFC<{
     showMessage: boolean;
     openWindow: (event: React.MouseEvent<HTMLElement, MouseEvent>) => void;
-}> = ({ showMessage, openWindow }) => <div
-    className={`setting_message view ${showMessage ? 'show' : ''}`}
-    onDoubleClick={openWindow}
->
-    <LogoContainer />
-    <ul className='ul_items'>
-        <li className='list_item'>Unlock overlay to turn on settings mode</li>
-        <li className='list_item'>Double-click to open settings window (required to disable click-through)</li>
-    </ul>
-</div>;
+}> = ({ showMessage, openWindow }) => {
+    const { t } = useTranslation('message');
+    return <div
+        className={`setting_message view ${showMessage ? 'show' : ''}`}
+        onDoubleClick={openWindow}
+    >
+        <LogoContainer />
+        <ul className='ul_items'>
+            <li className='list_item'>{t('turnOnSettingsMode')}</li>
+            <li className='list_item'>{t('openSettingsWindow')}</li>
+        </ul>
+    </div>;
+}

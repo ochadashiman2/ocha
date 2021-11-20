@@ -2,6 +2,7 @@ import { JOB_TYPE } from '../lib/Constants';
 import { RgbaColor } from 'react-colorful';
 import { ToggleSelector, PtdpsFormat } from '../component/settings/FormatSettings';
 import settings from '../locales/en/settings';
+import message from '../locales/en/message';
 
 /** STATE */
 export type AppState = {
@@ -164,6 +165,7 @@ export type LangType = 'English' | 'Japanese'
 
 export type LangResource = {
     settings: typeof settings,
+    message: typeof message,
 };
 
 export type LangResources = {

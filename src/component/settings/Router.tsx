@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import { HashRouter, Redirect, Route, Switch } from 'react-router-dom';
 import { About } from './About';
 import { ExportSettings } from './Export';
@@ -6,19 +7,20 @@ import { HideOthersName, HideOverlayAfterCombatEnd, HideOverlayAt, OutputLogOnCo
 import { Pane } from './Pane';
 import { ColorPickerList } from './StyleSettings';
 
-export const PaneRouter = () =>
-    <HashRouter>
+export const PaneRouter = () => {
+    const {t} = useTranslation();
+    return <HashRouter>
         <Switch>
             <Route
                 path='/general'
                 render={() => Pane({
                     title: 'General',
                     settingItemList: [
-                        { label: '自分以外の名前を隠す', item: <HideOthersName /> },
-                        { label: '戦闘終了後に非表示にする', item: <HideOverlayAfterCombatEnd /> },
-                        { label: '非表示にするまでの秒数', item: <HideOverlayAt /> },
-                        { label: 'コンソールへログを出力する', item: <OutputLogOnConsole /> },
-                        { label: '設定をリセットする', item: <ResetSettings /> },
+                        { label: t('hideOtherPlayerNames'), item: <HideOthersName /> },
+                        { label: t('hideOverlayAfterCombatEnd'), item: <HideOverlayAfterCombatEnd /> },
+                        { label: t('hideOverlayAt'), item: <HideOverlayAt /> },
+                        { label: t('outputLogOnConsole'), item: <OutputLogOnConsole /> },
+                        { label: t('resetSettings'), item: <ResetSettings /> },
                     ]
                 })}
                 exact
@@ -28,13 +30,13 @@ export const PaneRouter = () =>
                 render={() => Pane({
                     title: 'Format',
                     settingItemList: [
-                        { label: '戦闘時間の形式', item: <TimestampFormat /> },
-                        { label: 'PTHPSの形式', item: <PthpsFormat /> },
-                        { label: 'PTDPSの形式', item: <PtdpsFormat /> },
-                        { label: 'ジョブアイコン', item: <ShowJobIcon /> },
-                        { label: '名前の形式', item: <NameFormat /> },
-                        { label: 'DPSの形式', item: <DpsFormat /> },
-                        { label: 'HPSの形式', item: <HpsFormat /> },
+                        { label: t('timestampFormat'), item: <TimestampFormat /> },
+                        { label: t('pthpsFormat'), item: <PthpsFormat /> },
+                        { label: t('ptdpsFormat'), item: <PtdpsFormat /> },
+                        { label: t('showJobIcon'), item: <ShowJobIcon /> },
+                        { label: t('nameFormat'), item: <NameFormat /> },
+                        { label: t('dpsFormat'), item: <DpsFormat /> },
+                        { label: t('hpsFormat'), item: <HpsFormat /> },
                     ]
                 })}
                 exact
@@ -44,30 +46,30 @@ export const PaneRouter = () =>
                 render={() => Pane({
                     title: 'Style',
                     settingItemList: [
-                        { label: 'オーバーレイの位置', item: <OverLayVerticalAlign /> },
+                        { label: t('overLayVerticalAlign'), item: <OverLayVerticalAlign /> },
                         {
-                            label: 'TANKの色',
+                            label: t('tankColor'),
                             item: <ColorPickerList {...{
                                 colorTypeKeysList: ['tankMeterForegroundColor', 'tankMeterBackgroundColor', 'tankPrimaryFontColor', 'tankFontColor']
                             }} />,
                             type: 'column',
                         },
                         {
-                            label: 'HEALERの色',
+                            label: t('healerColor'),
                             item: <ColorPickerList {...{
                                 colorTypeKeysList: ['healerMeterForegroundColor', 'healerMeterBackgroundColor', 'healerPrimaryFontColor', 'healerFontColor']
                             }} />,
                             type: 'column',
                         },
                         {
-                            label: 'DPSの色',
+                            label: t('dpsColor'),
                             item: <ColorPickerList {...{
                                 colorTypeKeysList: ['dpsMeterForegroundColor', 'dpsMeterBackgroundColor', 'dpsPrimaryFontColor', 'dpsFontColor']
                             }} />,
                             type: 'column',
                         },
                         {
-                            label: 'その他の色',
+                            label: t('othersColor'),
                             item: <ColorPickerList {...{
                                 colorTypeKeysList: ['othersMeterForegroundColor', 'othersMeterBackgroundColor', 'othersPrimaryFontColor', 'othersFontColor']
                             }} />,
@@ -82,7 +84,7 @@ export const PaneRouter = () =>
                 render={() => Pane({
                     title: 'Import/Export',
                     settingItemList: [
-                        { label: 'Export', item: <ExportSettings /> }
+                        { label: t('exportSettings'), item: <ExportSettings /> }
                     ]
                 })}
                 exact
@@ -91,3 +93,4 @@ export const PaneRouter = () =>
             <Redirect to='/general' />
         </Switch>
     </HashRouter>;
+}

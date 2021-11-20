@@ -5,6 +5,7 @@ import { ColorTypeKeys } from '../../@types';
 import { useSetSettings } from '../../hooks/useSetSettings';
 import { rgbaStringToRgba, rgbaToRgbaString } from '../../lib/Color';
 import { isRgbaString } from '../../typeguard';
+import { useTranslation } from 'react-i18next';
 
 export const ColorPickerList: React.VFC<{ colorTypeKeysList: ColorTypeKeys[] }> = ({ colorTypeKeysList }) => {
     return <div>
@@ -15,13 +16,14 @@ export const ColorPickerList: React.VFC<{ colorTypeKeysList: ColorTypeKeys[] }> 
 };
 
 export const ColorPicker: React.VFC<{ name: ColorTypeKeys }> = ({ name }) => {
+    const { t } = useTranslation();
     const { value, setSettings, pushSettings } = useSetSettings(name);
     const [textColor, setTextColor] = useState(rgbaToRgbaString(value));
     const tSetSettings = useThrottleCallback(setSettings, 30);
     const tPushSettings = useThrottleCallback(pushSettings, 30);
 
     return <div className="colorPicker padding">
-        <label>{ColorLabelMap[name]}</label>
+        <label>{t(`color.${name}`)}</label>
         <RgbaColorPicker color={value} onChange={color => {
             setTextColor(rgbaToRgbaString(color))
             tSetSettings(color);
@@ -36,23 +38,4 @@ export const ColorPicker: React.VFC<{ name: ColorTypeKeys }> = ({ name }) => {
             tPushSettings(color);
         }} />
     </div>;
-};
-
-const ColorLabelMap = {
-    tankMeterForegroundColor: 'バー',
-    healerMeterForegroundColor: 'バー',
-    dpsMeterForegroundColor: 'バー',
-    othersMeterForegroundColor: 'バー',
-    tankMeterBackgroundColor: '背景',
-    healerMeterBackgroundColor: '背景',
-    dpsMeterBackgroundColor: '背景',
-    othersMeterBackgroundColor: '背景',
-    tankPrimaryFontColor: '自分のフォント',
-    healerPrimaryFontColor: '自分のフォント',
-    dpsPrimaryFontColor: '自分のフォント',
-    othersPrimaryFontColor: '自分のフォント',
-    tankFontColor: '他人のフォント',
-    healerFontColor: '他人のフォント',
-    dpsFontColor: '他人のフォント',
-    othersFontColor: '他人のフォント',
 };

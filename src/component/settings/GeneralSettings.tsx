@@ -5,6 +5,7 @@ import { DEFAULT_SETTINGS } from '../../lib/Constants';
 import { saveSettings } from '../../lib/Storage';
 import { CheckBox } from './ui/CheckBox';
 import { ToggleSelector } from './ui/ToggleSelector';
+import { useTranslation } from 'react-i18next';
 
 export const HideOverlayAt: React.VFC<{}> = () => {
     const { value, setSettings, pushSettings } = useSetSettings('hideOverlayAt');
@@ -41,12 +42,14 @@ export const OverLayVerticalAlign: React.VFC<{}> = () => <ToggleSelector {...{
 }} />;
 
 export const ResetSettings: React.VFC<{}> = () => {
+    const { t } = useTranslation();
     const [_, setFullSettings] = useContext(SettingsContext);
     return <input
         type='button'
         value='Reset'
         onClick={() => {
-            if (!window.confirm('This will reset all settings.\nAre your sure you want to continue?'))
+            const message = t('resetConfirmMessage');
+            if (!window.confirm(message))
                 return;
             setFullSettings(DEFAULT_SETTINGS);
             saveSettings(DEFAULT_SETTINGS);

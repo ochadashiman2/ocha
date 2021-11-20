@@ -7,10 +7,10 @@ export const TranslationProvider: React.VFC<{ children: JSX.Element }> = ({ chil
 
     useEffect(() => {
         (async () => {
-            const result = await window.callOverlayHandler?.({ call: 'getLanguage' })
-                .then((ret: any) => ret.language) ?? 'English';
-            saveLanguage(result);
-            i18n.changeLanguage(result);
+            const language = await window.callOverlayHandler?.({ call: 'getLanguage' })
+                .then(ret => ret.language) ?? 'English';
+            saveLanguage(language);
+            i18n.changeLanguage(language);
         })();
         return () => { };
     }, []);

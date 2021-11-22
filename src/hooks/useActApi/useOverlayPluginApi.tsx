@@ -31,8 +31,8 @@ export const useOverlayPluginApi: ActApi = (parser = combatDataParser) => {
             logger.current(`useOverlayPluginApi: ChangePrimaryPlayer: charName=${e.charName}`);
             setPrimaryName(e.charName);
         };
-        window.addOverlayListener('ChangePrimaryPlayer', ChangePrimaryPlayerEventHandler);
-        return () => window.removeOverlayListener('ChangePrimaryPlayer', ChangePrimaryPlayerEventHandler);
+        window.addOverlayListener?.('ChangePrimaryPlayer', ChangePrimaryPlayerEventHandler);
+        return () => window.removeOverlayListener?.('ChangePrimaryPlayer', ChangePrimaryPlayerEventHandler);
     }, []);
 
     useEffect(() => {
@@ -75,15 +75,15 @@ export const useOverlayPluginApi: ActApi = (parser = combatDataParser) => {
             setAppState(nextState);
         };
 
-        window.addOverlayListener('CombatData', CombatDataEventHandler);
-        return () => window.removeOverlayListener('CombatData', CombatDataEventHandler);
+        window.addOverlayListener?.('CombatData', CombatDataEventHandler);
+        return () => window.removeOverlayListener?.('CombatData', CombatDataEventHandler);
     }, [isLocked, primaryName, settings.hideOverlayAt, settings.hideOverlayAfterCombatEnd]);
 
     useEffect(() => {
         if (alreadyInit)
             return () => { };
         logger.current(`useOverlayPluginApi: startOverlayEvents`);
-        window.startOverlayEvents();
+        window.startOverlayEvents?.();
         setAlreadyInit(true);
         return () => { };
     }, [alreadyInit]);

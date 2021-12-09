@@ -7,9 +7,9 @@ export const SettingMessageOverLay: React.VFC<{
     setShowMessage: (flag: boolean) => void;
     openWindow: (event: React.MouseEvent<HTMLElement, MouseEvent>) => void;
 }> = ({ showMessage, openWindow, setShowMessage }) => {
-    const { t } = useTranslation('message');
+    const { t, i18n } = useTranslation('message');
     return <div
-        className={`setting_message fade ${showMessage ? 'show' : ''}`}
+        className={`setting_message setting_message_${i18n.language} fade ${showMessage ? 'show' : ''}`}
         onDoubleClick={openWindow}
         onMouseOut={() => setShowMessage(false)}
     >

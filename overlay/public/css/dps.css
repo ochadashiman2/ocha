@@ -172,6 +172,10 @@ header.party {
   padding: 0.5rem;
 }
 
+.setting_message_Japanese {
+  font-size: 0.9rem;
+}
+
 .ul_items {
   padding-top: 1.5rem;
   display: flex;

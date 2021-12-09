@@ -80,6 +80,14 @@ export const SETTING_APP_STATE: AppState = {
             role: 'healer',
             percent: '28.82%'
         },
+        {
+            name: "Chochoco (Hime' Nyan'Nyan)",
+            dps: 1103,
+            hps: 0,
+            job: 'unknown',
+            role: 'others',
+            percent: '6.97%'
+        },
     ]
 };
 

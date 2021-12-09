@@ -11,6 +11,8 @@ export const formatter2 = new Intl.NumberFormat('ja', {
     maximumFractionDigits: 1,
 });
 
+export const PetNameRX = /^[a-zA-Z]{1,10}\s\([a-zA-Z\s'-]+\)$/;
+
 export const padZero = (n: number, digit: number) => {
     return n.toString(10).padStart(digit, '0').slice(-digit);
 }
@@ -30,6 +32,14 @@ export const hideOthersNameFormatter = (isPrimary: boolean, hideOthersName: bool
         return ''
     return name;
 };
+
+export const petNameFomatter = (name: string) => {
+    const [firstName] = name.split(' ');
+    const isPet = PetNameRX.test(name);
+    if (isPet)
+        return firstName;
+    return name;
+}
 
 export const nameFormatFomatter = (first: NameFormatType, last: NameFormatType) => (name: string) => {
     const [firstName, lastName] = name.split(' ');
@@ -57,6 +67,7 @@ export const formatFullName = (name: string, settings: Settings, isPrimary: bool
     const formatterList = [
         primaryNameFormatter(isPrimary),
         hideOthersNameFormatter(isPrimary, settings.hideOthersName),
+        petNameFomatter,
         nameFormatFomatter(settings.firstNameFormat, settings.lastNameFormat)
     ]
     return formatterList.reduce((acc, filter) => filter(acc), name);

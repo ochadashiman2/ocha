@@ -135,7 +135,7 @@ export const DEFAULT_SETTINGS: Settings = {
     dpsFontColor: { r: 255, g: 255, b: 255, a: 1.00 },
     dpsPrimaryFontColor: { r: 255, g: 238, b: 0, a: 1.00 },
 
-    othersMeterForegroundColor: { r: 255, g: 252, b: 87, a: 0.85 },
+    othersMeterForegroundColor: { r: 81, g: 81, b: 81, a: 0.85 },
     othersMeterBackgroundColor: { r: 0, g: 0, b: 0, a: 0.50 },
     othersFontColor: { r: 255, g: 255, b: 255, a: 1.00 },
     othersPrimaryFontColor: { r: 255, g: 238, b: 0, a: 1.00 },

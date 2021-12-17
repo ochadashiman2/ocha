@@ -6,8 +6,10 @@ export const InitialMessage: React.VFC<{
     openWindow: (event: React.MouseEvent<HTMLElement, MouseEvent>) => void;
 }> = ({ showMessage, openWindow }) => {
     const { t, i18n } = useTranslation('message');
+    const styleByLanguage = `setting_message_${i18n.language}`;
+    const display = showMessage ? 'show' : '';
     return <div
-        className={`setting_message setting_message_${i18n.language} view ${showMessage ? 'show' : ''}`}
+        className={`setting_message fade ${styleByLanguage} ${display}`}
         onDoubleClick={openWindow}
     >
         <LogoContainer />

@@ -88,6 +88,14 @@ export const SETTING_APP_STATE: AppState = {
             role: 'others',
             percent: '6.97%'
         },
+        {
+            name: "Limit Break",
+            dps: 896,
+            hps: 0,
+            job: 'LIMIT BREAK',
+            role: 'others',
+            percent: '5.66%'
+        },
     ]
 };
 
@@ -152,7 +160,7 @@ export const JOB_TYPE = {
     ],
     crafter: ['CRP', 'BSM', 'ARM', 'GSM', 'LTW', 'WVR', 'ALC', 'CUL'],
     gatherer: ['MIN', 'BTN', 'FSH'],
-    others: ['unknown'],
+    others: ['LIMIT BREAK', 'unknown'],
 } as const;
 
 export const APP_VERSION = 'v1.0.0';

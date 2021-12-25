@@ -11,7 +11,7 @@ export const formatter2 = new Intl.NumberFormat('ja', {
     maximumFractionDigits: 1,
 });
 
-export const PetNameRX = /^[a-zA-Z]{1,10}\s\([a-zA-Z\s'-]+\)$/;
+export const PetNameRX = /^[a-zA-Z-]{1,10}\s\([a-zA-Z\s'-]+\)$/;
 
 export const padZero = (n: number, digit: number) => {
     return n.toString(10).padStart(digit, '0').slice(-digit);

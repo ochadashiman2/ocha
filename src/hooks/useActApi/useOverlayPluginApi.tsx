@@ -1,5 +1,5 @@
 import { useContext, useEffect, useRef, useState } from 'react';
-import { ActApi, AppState } from '../../@types';
+import { ActApi, AppState, CombatData } from '../../@types';
 import { SettingsContext } from '../../component/dps/index';
 import { combatDataParser } from '../../lib/combatDataParser';
 import { INITIAL_APPSTATE, SETTING_APP_STATE } from '../../lib/Constants';
@@ -15,6 +15,7 @@ export const createSettingAppState = (primaryName: string): AppState => {
 };
 
 export const useOverlayPluginApi: ActApi = (parser = combatDataParser) => {
+    const rawCombatData = useRef<CombatData>();
     const [appState, setAppState] = useState<AppState>(INITIAL_APPSTATE);
     const [primaryName, setPrimaryName] = useState<string>('You');
     const [isLocked, setIsLocked] = useState<boolean>(true);
@@ -62,6 +63,10 @@ export const useOverlayPluginApi: ActApi = (parser = combatDataParser) => {
    
             if (!isCombatDataEvent(e))
                 return;
+
+            if (JSON.stringify(rawCombatData.current) === JSON.stringify(e))
+                return;
+            rawCombatData.current = e
 
             const needToSetClearUiTimer = e.isActive === 'false' && settings.hideOverlayAfterCombatEnd;
 

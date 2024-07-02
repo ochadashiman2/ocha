@@ -6,6 +6,7 @@ Simple DPS and HPS overlay for Final Fantasy XIV
 
 ## Installation
 Add this URL to new tab on your OverlayPlugin.
+
 [`https://ochadashiman2.github.io/pulse/overlay/`](https://ochadashiman2.github.io/ocha/overlay/)
 
 ## Configuration

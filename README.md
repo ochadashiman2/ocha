@@ -1,4 +1,4 @@
-# pulse
+# ocha
 Simple DPS and HPS overlay for Final Fantasy XIV
 
 ## Required
@@ -7,7 +7,7 @@ Simple DPS and HPS overlay for Final Fantasy XIV
 ## Installation
 Add this URL to new tab on your OverlayPlugin.
 
-`https://erierihime.github.io/pulse/overlay/`
+`https://ochadashiman2.github.io/pulse/overlay/`
 
 ## Configuration
 If you want to change the overlay settings, unlock overlay and double-click on the overlay. Then the settings window wiil open.

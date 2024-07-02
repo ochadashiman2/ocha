@@ -4,7 +4,7 @@
   "description": "Simple DPS and HPS overlay for Final Fantasy XIV.",
   "scripts": {
     "start": "webpack -w",
-    "build": "NODE_ENV=production webpack"
+    "build": "webpack --mode production"
   },
   "keywords": [
     "act"

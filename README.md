@@ -2,7 +2,7 @@
 Simple DPS and HPS overlay for Final Fantasy XIV
 
 ## Required
-[ngld/OverlayPlugin](https://github.com/ngld/OverlayPlugin) 0.16.6 or later
+[OverlayPlugin/OverlayPlugin](https://github.com/OverlayPlugin/OverlayPlugin) 0.19.31 or later
 
 ## Installation
 Add this URL to new tab on your OverlayPlugin.

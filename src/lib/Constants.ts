@@ -155,7 +155,7 @@ export const JOB_TYPE = {
     tank: ['WAR', 'DRK', 'PLD', 'GNB', 'MRD', 'GLA'],
     healer: ['WHM', 'SCH', 'AST', 'SGE', 'CNJ'],
     dps: [
-        'MNK', 'NIN', 'DRG', 'SAM', 'RPR', 'BLM', 'SMN', 'RDM', 'BRD', 'MCH', 'DNC',
+        'MNK', 'NIN', 'DRG', 'SAM', 'RPR', 'VPR', 'BLM', 'SMN', 'RDM', 'PCT', 'BRD', 'MCH', 'DNC',
         'ROG', 'LNC', 'PGL', 'THM', 'ACN', 'ARC', 'BLU'
     ],
     crafter: ['CRP', 'BSM', 'ARM', 'GSM', 'LTW', 'WVR', 'ALC', 'CUL'],

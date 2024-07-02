@@ -3,11 +3,7 @@ const TerserPlugin = require("terser-webpack-plugin");
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
 const webpack = require('webpack');
 
-const mode = process.env.NODE_ENV ?? 'development';
-const isDev = mode === 'development';
-
 module.exports = {
-    mode,
     entry: {
         dps: './src/component/dps/index.tsx',
         settings: './src/component/settings/index.tsx'

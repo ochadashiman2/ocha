@@ -9,7 +9,7 @@
   "keywords": [
     "act"
   ],
-  "author": "EriEriHime",
+  "author": "OchaDashiMan",
   "license": "ISC",
   "dependencies": {
     "@react-hook/throttle": "^2.2.0",

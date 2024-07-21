@@ -28,7 +28,7 @@ export const SETTING_APP_STATE: AppState = {
             name: 'Mike Cat',
             dps: 14687,
             hps: 0,
-            job: 'NIN',
+            job: 'VPR',
             role: 'dps',
             percent: '92.84%'
         },
